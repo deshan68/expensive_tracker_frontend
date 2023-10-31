@@ -1,8 +1,13 @@
 import "./App.css";
 import Expenses from "./components/Expenses";
+import Login from "./pages/Login";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 }
 
 export default App;
