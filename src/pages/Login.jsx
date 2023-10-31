@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const Login = () => {
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleEmail = (event) => {
     setUserName(event.target.value);
@@ -16,11 +16,11 @@ const Login = () => {
     event.preventDefault();
     const obj = {
       userName: userName,
-      password: password
+      password: password,
     };
     console.log(obj); // You can replace this with your desired logic for handling the data
-    setUserName(''); // Reset the input fields after submission
-    setPassword('');
+    setUserName(""); // Reset the input fields after submission
+    setPassword("");
   };
 
   return (
@@ -32,7 +32,12 @@ const Login = () => {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+          action="#"
+          method="POST"
+        >
           <div>
             <div className="mt-2">
               <input
@@ -75,7 +80,9 @@ const Login = () => {
           </div>
         </form>
 
-        <p className="mt-10 text-center text-sm text-gray-500 underline">Sign up for new user?</p>
+        <p className="mt-10 text-center text-sm text-gray-500 underline">
+          Sign up for new user?
+        </p>
       </div>
     </div>
   );
