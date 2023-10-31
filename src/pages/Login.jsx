@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleEmail = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const obj = {
+      userName: userName,
+      password: password
+    };
+    console.log(obj); // You can replace this with your desired logic for handling the data
+    setUserName(''); // Reset the input fields after submission
+    setPassword('');
+  };
+
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -10,7 +32,7 @@ const Login = () => {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" action="#" method="POST">
+        <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
           <div>
             <div className="mt-2">
               <input
@@ -21,6 +43,8 @@ const Login = () => {
                 autoComplete="email"
                 required
                 className="block w-full px-3 rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={userName}
+                onChange={handleEmail}
               />
             </div>
           </div>
@@ -35,6 +59,8 @@ const Login = () => {
                 autoComplete="current-password"
                 required
                 className="block w-full px-3 rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={password}
+                onChange={handlePassword}
               />
             </div>
           </div>
@@ -49,9 +75,7 @@ const Login = () => {
           </div>
         </form>
 
-        <p className="mt-10 text-center text-sm text-gray-500 underline">
-          Sign up for new user?
-        </p>
+        <p className="mt-10 text-center text-sm text-gray-500 underline">Sign up for new user?</p>
       </div>
     </div>
   );
