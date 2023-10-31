@@ -9,5 +9,4 @@ const ExpenseItem = ({ title, amount, date }) => {
     </div>
   );
 };
-
 export default ExpenseItem;

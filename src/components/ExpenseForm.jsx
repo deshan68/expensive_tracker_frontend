@@ -62,5 +62,4 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
     </form>
   );
 };
-
 export default ExpenseForm;
